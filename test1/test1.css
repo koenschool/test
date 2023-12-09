@@ -1,0 +1,37 @@
+.body{
+    background-color:black;
+}
+
+input{
+    color:deepskyblue;
+    font-family: monospace;
+    background-color:black;
+    font-weight: bold;
+    border-color:deepskyblue;
+    font-size: large;
+    width: 25%;
+}
+
+p{
+    font-family:monospace;
+    color:deepskyblue;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+button{
+    cursor: crosshair;
+    margin-top: 10px;
+    background-color:black;
+    font-weight: bold;
+    border-color: deepskyblue;
+    color:deepskyblue;
+    font-family: monospace;
+    font-size:x-large;
+}
+
+.b1{
+    color:deepskyblue;
+    font-family: monospace;
+    font-size: large;
+}

@@ -1,0 +1,54 @@
+.deel2{
+    float: right;
+    user-select: none;
+    cursor: pointer;
+    font-size: xx-large;
+    width: fit-content;
+}
+
+
+
+.deel1{
+    position:absolute;
+    user-select: none;
+    cursor: pointer;
+    font-size: xx-large;
+    width: fit-content;
+}
+
+p{
+    font-size: x-large;
+}
+
+button{
+    margin-left: 50%;
+}
+
+@media screen and (max-width: 500px) {
+
+
+    .deel2{
+        display:flex;
+        user-select: none;
+        cursor: pointer;
+        font-size: xx-large;
+    }
+    
+    
+    
+    .deel1{
+        display:flex;
+        user-select: none;
+        cursor: pointer;
+        font-size: xx-large;
+    }
+    
+    p{
+        font-size: x-large;
+    }
+    
+    button{
+        margin-left:50%;
+    }
+
+}
