@@ -95,6 +95,6 @@ function laatzien(){
         }
 
 
-    document.write("<style> h1{ font-family: monospace; color:blue;</style><h1>speler 1 deed",getal1,"en speler 2 deed",getal2," dus ",getal3," ",getal4,"</h1>")
+    document.write("<style>body{background-color:gray;} h1{ font-family: monospace;     color:deepskyblue;</style><h1>speler 1 deed",getal1,"en speler 2 deed",getal2," dus ",getal3," ",getal4,"</h1>")
     
 }

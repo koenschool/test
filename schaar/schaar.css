@@ -1,3 +1,7 @@
+body{
+    background-color: gray;
+}
+
 .deel2{
     float: right;
     user-select: none;
@@ -21,6 +25,9 @@ p{
 }
 
 button{
+    border-color:deepskyblue;
+    background-color:gray;
+    color:deepskyblue;
     margin-left: 50%;
 }
 
@@ -48,6 +55,9 @@ button{
     }
     
     button{
+        border-color:deepskyblue;
+        background-color:gray;
+        color:deepskyblue;
         margin-left:50%;
     }
 
