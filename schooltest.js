@@ -14,7 +14,7 @@ let radius = 20; // radius van de cirkel
 
 let x2 = 100;
 let y2 = 150;
-let speed = 4;
+let speed = 10;
 let radius2 = 10;
 
 document.addEventListener('keydown', function(event){
@@ -42,11 +42,36 @@ document.addEventListener('keydown', function(event){
     
 });
 
-function collission(){
-    if(x == x2 && y ==y2){
-        alert("game over")
+function collision() {
+    let dx = x - x2;
+    let dy = y - y2;
+    let distance = Math.sqrt(dx * dx + dy * dy);
+    
+    if (distance < radius + radius2) {
+        alert("Game Over");
+        x=100; y=100;
+        x2 = 200; y2 = 200;
+        dx = 0; dy = 0;
+    }
+ 
+}
+
+let Score=0;
+let tijdMax = 25;
+let tijdTeller = 0;
+
+
+function scoreScherm(){
+    ctx.font = "20px Arial";
+    ctx.fillstyle = "red";
+    ctx.fillText(String(Score),10,22);
+    tijdTeller++;
+    if (tijdTeller>tijdMax){
+        Score++;
+        tijdTeller=0;
     }
 }
+
 
 function jaja(){
    dx = 2; // snelheid X
@@ -78,6 +103,8 @@ function update() {
  
     drawCircle();
     drawCircle2();
+    collision();
+    scoreScherm();
     
     // Verander de positie van de cirkel
     x += dx;
@@ -94,5 +121,6 @@ function update() {
     requestAnimationFrame(update); // Roep update weer aan voor de volgende frame
 }
  
+
 // Start de animatieloop
 update();
