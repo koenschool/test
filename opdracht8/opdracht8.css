@@ -1,0 +1,16 @@
+body,input,button,select,.saldo,.geb{
+    background-color:black;
+    font-family:monospace;
+    color:cornflowerblue;
+    font-size:large;
+    border-color:deepskyblue;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+    appearance: textfield;
+}

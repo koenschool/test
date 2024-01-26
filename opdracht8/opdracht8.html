@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bankrekening simulator</title>
+    <link rel="icon" type="image/x-icon" href="img/money.jpg">
+    <link rel="stylesheet" href="opdracht8.css">
+    <script defer src="opdracht8.js"></script>
+</head>
+<body onload="makeuser()">
+    <form id="gebruiker">
+        <label for="gebruikers">Selecteer Gebruiker:</label>
+        <select name="gebruikers" id="geb">
+          <option value="gebruiker1">Gebruiker 1</option>
+          <option value="gebruiker2">Gebruiker 2</option>
+          <option value="gebruiker3">Gebruiker 3</option>
+          <option value="gebruiker4">Gebruiker 4</option>
+          <option value="gebruiker5">Gebruiker 5</option>
+          <option value="gebruiker6">Gebruiker 6</option>
+        </select><br>
+        <div class="saldo" id="users">
+
+        </div>
+        <div class="button">
+        <input type="number" id="number" placeholder="Voer hier een getal in">
+        <button type="button" onclick="storten()">Storten</button>
+        <button type="button" onclick="opnemen()">Opnemen</button><br>
+        </div>
+        <h2>Transactiegeschiedenis</h2>
+        <ul id="actie">
+        </ul>
+  </form>
+</body>
+</html>
