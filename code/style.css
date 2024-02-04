@@ -1,0 +1,17 @@
+h1{
+    color:aqua;
+}
+
+body{
+    font-family:monospace;
+}
+
+
+img:hover{
+    width:400px;
+}
+
+h1:hover{
+    color:red;
+    cursor:crosshair;
+}

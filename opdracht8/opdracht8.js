@@ -15,7 +15,6 @@ function gebupdate(){
     document.getElementById(yeash).style.display = "none";
     document.getElementById("saldo"+document.getElementById("geb").value).style.display = "inline";
     }
-
 }
 
 
