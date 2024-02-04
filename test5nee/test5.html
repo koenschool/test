@@ -112,6 +112,7 @@ function bepaal(){
 }
 
 function spel(){
+    var img = document.getElementById("img");
   random = Math.floor(Math.random() * 3)
   if(random == 2){
     goed=false;
@@ -164,6 +165,7 @@ function epic(kleur){
           }
         }
         goed=false;
+        var img = document.getElementById("img");
         document.getElementById("blue").innerHTML=blueg;
         document.getElementById("green").innerHTML=greeng;
         document.getElementById("yellow").innerHTML=yellowg;
