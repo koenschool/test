@@ -25,14 +25,15 @@ function bepaal(){
 }
 
 function spel(){
+    var img = document.getElementById("img");
   random = Math.floor(Math.random() * 3)
   if(random == 2){
     goed=false;
-    img.setAttribute("src", "img/Red.svg.png");
+    img.setAttribute("src", "img/red.png");
   }
   else if(random == 0||1){
     goed=true;
-    img.setAttribute("src", "img/green.svg.png");
+    img.setAttribute("src", "img/green.png");
   }
 
   console.log(random);
@@ -77,6 +78,7 @@ function epic(kleur){
           }
         }
         goed=false;
+        var img = document.getElementById("img");
         document.getElementById("blue").innerHTML=blueg;
         document.getElementById("green").innerHTML=greeng;
         document.getElementById("yellow").innerHTML=yellowg;
