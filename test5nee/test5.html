@@ -106,26 +106,33 @@ function begin(){
 }
 
 function bepaal(){
-  var tijd = Math.floor(Math.random() * 10000 + 1);
+  var tijd = Math.floor(Math.random() * 10000 + 500);
   console.log(tijd);
   const bs = setTimeout(spel, tijd);
 }
 
 function spel(){
-    var img = document.getElementById("img");
+    img = document.getElementById("img");
   random = Math.floor(Math.random() * 3)
   if(random == 2){
     goed=false;
     img.setAttribute("src", "img/red.png");
+    setTimeout(foto, 2000);
   }
   else if(random == 0||1){
     goed=true;
     img.setAttribute("src", "img/green.png");
+    bepaal();
   }
-
-  console.log(random);
-  bepaal();
 }
+
+
+function foto(){
+    
+    img.setAttribute("src", "img/kat.gif");
+    bepaal();
+}
+
 
 
 function epic(kleur){
