@@ -107,7 +107,6 @@ function begin(){
 
 function bepaal(){
   var tijd = Math.floor(Math.random() * 10000 + 500);
-  console.log(tijd);
   const bs = setTimeout(spel, tijd);
 }
 
@@ -188,22 +187,22 @@ function spin(){
   }
   if(blueg==3){
     clearInterval(spin);
-    document.getElementById("weg").remove();
+    document.getElementById("weg").style.display = "none";
     document.getElementById("klaar").innerHTML = "blauw heeft gewonnen!";
   }
   else if(greeng==3){
     clearInterval(spin);
-    document.getElementById("weg").remove();
+    document.getElementById("weg").style.display = "none";
     document.getElementById("klaar").innerHTML = "groen heeft gewonnen!";
   }
   else if(yellowg==3){
     clearInterval(spin);
-    document.getElementById("weg").remove();
+    document.getElementById("weg").style.display = "none";
     document.getElementById("klaar").innerHTML = "geel heeft gewonnen!";
   }
   else if(redg==3){
     clearInterval(spin);
-    document.getElementById("weg").remove();
+    document.getElementById("weg").style.display = "none";
     document.getElementById("klaar").innerHTML = "rood heeft gewonnen!";
   }
 
