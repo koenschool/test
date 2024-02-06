@@ -26,6 +26,7 @@
         right: 100;
     }
     
+    
     .green{
         rotate:225deg;
         position: fixed;
@@ -58,31 +59,80 @@
         right: 40%;
     }
     
+
+    .flex{
+      display:flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+
     h1{
         color:white;
         font-family: 'Minecraft', sans-serif;
         font-size: xx-large;
     }
+
+
+    #knop{
+      padding:20%;
+        margin-top: 30%;
+        color:white;
+        font-family: 'Minecraft', sans-serif;
+        font-size: 170%;
+        display:none;
+        background-color: black;
+        border-color: white;
+    }
     
-    #begin{
+    .voor{
         z-index:10;
         font-family: 'Minecraft', sans-serif;
-        font-size: xx-large;
-        position: absolute;
+        font-size: 90%;
         display:flex;
         justify-content: center;
-        flex-direction: column;
-        width:100.1%;
-        height:100.1%;
         color:white;
         background-color:black;
         border-color: white;
-        z-index: 4;
-        position:fixed;
         align-content: center;
         left:-1px;
         top: -1px;
     }
+
+
+    .begin{
+      z-index:10;
+      font-family: 'Minecraft', sans-serif;
+      font-size: xx-large;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      color:white;
+      background-color:black;
+      border-color: white;
+      align-content: center;
+      left:-1px;
+      top: -1px;
+    }
+
+    .na{
+      width: 30%;
+      height: 15%;
+      z-index:10;
+      font-family: 'Minecraft', sans-serif;
+      font-size: x-large;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      color:white;
+      background-color:black;
+      border-color: white;
+      align-content: center;
+      left:-1px;
+      top: -1px;
+    }
+
     </style>
     <script>
         var a = "gaming";
@@ -101,9 +151,17 @@ var img = document.getElementById("img");
 
 function begin(){
   document.getElementById("begin").remove();
+  document.getElementById("begin2").remove();
   bepaal();
   setInterval(spin, 1);
 }
+
+
+
+function doe(){
+  document.getElementById("weg").style.display = "inline";
+}
+
 
 function bepaal(){
   var tijd = Math.floor(Math.random() * 10000 + 500);
@@ -186,37 +244,52 @@ function spin(){
     hoek=0;
   }
   if(blueg==3){
-    clearInterval(spin);
-    document.getElementById("weg").style.display = "none";
-    document.getElementById("klaar").innerHTML = "blauw heeft gewonnen!";
+    gewin="blauw";
+    verdamp();
   }
   else if(greeng==3){
-    clearInterval(spin);
-    document.getElementById("weg").style.display = "none";
-    document.getElementById("klaar").innerHTML = "groen heeft gewonnen!";
+    gewin="paars";
+    verdamp();
   }
-  else if(yellowg==3){
-    clearInterval(spin);
-    document.getElementById("weg").style.display = "none";
-    document.getElementById("klaar").innerHTML = "geel heeft gewonnen!";
+  else if(yellowg==1){
+    gewin="geel";
+    verdamp();
   }
   else if(redg==3){
-    clearInterval(spin);
-    document.getElementById("weg").style.display = "none";
-    document.getElementById("klaar").innerHTML = "rood heeft gewonnen!";
+    gewin="roze";
+    verdamp();
   }
 
    document.getElementById("img").style.rotate = hoek+"deg"; 
 }
 
-    </script>
+
+function verdamp(){
+  clearInterval(spin);
+  document.getElementById("knop").style.display = "inline";
+  document.getElementById("weg").style.display = "none";
+  document.getElementById("klaar").innerHTML = gewin+" heeft gewonnen!";
+}
+
+
+    </script> 
     <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
 </head>
 <body id="body" class="body">
-    <button onclick="begin()" id="begin">GO</button>
+  <div class="begin">
+  <p id="begin2" class="voor">Als er groen is klik op je bolletje en bij rood niet
+    klik op go om ver der te gaan</p>
+    <button onclick="begin()&doe()" id="begin" class="na">GO</button>
+  </div>
+
     <br>
+    <div class="flex">
     <h1 id="klaar"></h1>
-    <div id="weg">
+    <br>
+    <button id="knop" display="none" onclick="window. location. reload()">Druk hier om opnieuwe te spelen.</button>
+    </div>
+
+    <div id="weg" style="display:none;">
     <p id="blue" class="blue">0</p>
     <svg class="blue" width="100" height="100">
         <circle onmousedown="epic('blue')" cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="deepskyblue" />
@@ -224,7 +297,7 @@ function spin(){
 
     <p id="green" class="green">0</p>    
     <svg class="green" width="100" height="100">
-        <circle onmousedown="epic('green')" cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="lime" />
+        <circle onmousedown="epic('green')" cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="purple" />
     </svg>
     
     <p id="yellow" class="yellow">0</p>
@@ -234,9 +307,9 @@ function spin(){
     
     <p id="red" class="red">0</p> 
     <svg class="red" width="100" height="100">
-        <circle onmousedown="epic('red')" cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="crimson" />
-    </svg> 
-    <img id="img" src="img/kat.gif" width="100px" height="100px">
+        <circle onmousedown="epic('red')" cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="deeppink" />
+    </svg>
+    <img id="img" src="img/kat.gif" width="100px" height="100px"> 
     </div>
 
 </body>
