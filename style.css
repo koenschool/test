@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+    color:deepskyblue;
+    font-family: monospace;
+}
+
+header{
+    font-size:130%;
+    text-align: center;
+}
+
+button{
+    color:deepskyblue;
+    background-color:black;
+    border-color:cornflowerblue;
+    font-size:75%;
+}
+
+hr{
+    color:cornflowerblue;
+}
+
+.knopdeel{
+    font-size:150%;
+    margin:2%;
+}
+
+th{
+    font-size: x-large;
+}
+
+td{
+    font-size:large;
+}
+
+
+
+
+
+table, th, td {
+    border: 1px solid cornflowerblue;
+  }
+
+
+#consolelog{
+    border-style: solid;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    border-color:cornflowerblue;
+    position:absolute;
+    right: 0
+}
