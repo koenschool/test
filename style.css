@@ -49,5 +49,16 @@ table, th, td {
     height: 300px;
     border-color:cornflowerblue;
     position:absolute;
-    right: 0
+    right: 0;
+}
+
+#right{
+    position:absolute;
+    right: 0;
+    user-select:none;
+    cursor: pointer;
+}
+
+a{
+    color:lightskyblue;
 }
