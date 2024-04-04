@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="icon" href="invader.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body id="body">
+    <!-- <button href="koen.html">terug</button> -->
+    <div id="container" onmousemove="onMouseMove(event)">
+        <div id="invaders"></div>
+        <div id="bullets"></div>
+        
+        <div id="player">
+            <img width="50" src="ship.png"/>
+        </div>
+        <h1 id="scoreBoard"></h1>
+    </div>
+    <div id="menuContainer">
+        <h1 id="title">Earth Intruders</h1>
+        <button id="playButton" onclick="play()">Play</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
