@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Invaders</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        #gameArea {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            background-color: #111;
+            overflow: hidden;
+        }
+        #player {
+            width: 40px;
+            height: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            background-color: #0f0;
+            transform: translateX(-50%);
+        }
+        .bullet {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            width: 5px;
+            height: 20px;
+            background-color: #f00;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="gameArea">
+        <div id="player"></div>
+    </div>
+    <script>
+        const gameArea = document.getElementById('gameArea');
+        const player = document.getElementById('player');
+        let playerPosition = gameArea.offsetWidth / 2;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                playerPosition -= 10;
+                if (playerPosition < 0) {
+                    playerPosition = 0;
+                }
+            } else if (e.key === 'ArrowRight') {
+                playerPosition += 10;
+                if (playerPosition > gameArea.offsetWidth - player.offsetWidth) {
+                    playerPosition = gameArea.offsetWidth - player.offsetWidth;
+                }
+            } else if (e.key === ' ') {
+                shoot();
+            }
+            player.style.left = playerPosition + 'px';
+        });
+
+        function shoot() {
+            const bullet = document.createElement('div');
+            bullet.classList.add('bullet');
+            bullet.style.left = playerPosition + player.offsetWidth / 2 + 'px';
+            gameArea.appendChild(bullet);
+            let bulletInterval = setInterval(() => {
+                let bulletBottom = parseInt(window.getComputedStyle(bullet).getPropertyValue('bottom'));
+                if (bulletBottom >= gameArea.offsetHeight) {
+                    clearInterval(bulletInterval);
+                    bullet.remove();
+                } else {
+                    bullet.style.bottom = bulletBottom + 10 + 'px';
+                }
+            }, 50);
+        }
+    </script>
+</body>
+</html>

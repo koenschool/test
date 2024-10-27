@@ -1,0 +1,75 @@
+* {
+  font-family: Roboto;
+}
+
+:root {
+  --size: 300px;
+}
+
+#clock_circle {
+  box-shadow: 0 0 10px black;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  border: 2px solid black;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock_number {
+  padding-left: calc(var(--size) - 30px);
+  z-index: 10;
+  position: absolute;
+}
+
+.clock_tip {
+  border-radius: 10px;
+}
+
+#clock_sec,
+#clock_min,
+#clock_hr {
+  position: absolute;
+}
+
+#clock_sec {
+  height: calc(var(--size) * 0.7);
+}
+
+#clock_sec .clock_tip {
+  background-color: red;
+  width: 3px;
+  height: calc(var(--size) * 0.1);
+}
+
+#clock_min {
+  height: calc(var(--size) * 0.6);
+}
+
+#clock_min .clock_tip {
+  background-color: black;
+  width: 5px;
+  height: calc(var(--size) * 0.3);
+}
+
+#clock_hr {
+  height: calc(var(--size) * 0.4);
+}
+
+#clock_hr .clock_tip {
+  background-color: blue;
+  width: 5px;
+  height: calc(var(--size) * 0.2);
+}
+
+body #clock_dig {
+  z-index: 10;
+  font-family: monospace;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px black;
+  padding: 10px;
+  border-radius: 10px;
+}
