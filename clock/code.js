@@ -58,17 +58,17 @@ $(document).ready(function () {
         clock_sec_test = setInterval(function () {
             // console.log("sec:", clock_sec, " min:", clock_min, " hr:", clock_hr);
             if (clock_sec < 10) { clock_sec_disp = "0" + clock_sec } else { clock_sec_disp = clock_sec }
-            $("#clock_dig").html(clock_hr + ":" + clock_min + ":" + clock_sec_disp);
             $("#clock_sec").css("rotate", ((clock_sec * 6) + "deg"));
-            if (clock_sec >= 59) {
-                clock_sec = -1;
-            }
             clock_sec++;
-            if (clock_sec == 60 && min_switch == 0) {
+            $("#clock_dig").html(clock_hr + ":" + clock_min + ":" + clock_sec_disp);
+            if (clock_sec > 60 && min_switch == 0) {
                 min_switch = 1;
                 clock_min_func();
             }
-        }, 1000);
+            if (clock_sec > 60) {
+                clock_sec = 0;
+            }
+        }, 500);
     }
 
 });
