@@ -42,7 +42,7 @@ $(document).ready(function () {
     if (can_game_start == 1) {
       game_random_num1 = Math.floor(Math.random() * 100);
       game_random_num2 = Math.floor(Math.random() * 100);
-      game_random_add_num = Math.floor(Math.random() * 3);
+      game_random_add_num = Math.floor(Math.random() * 4);
       switch (game_random_add_num) {
         case 0:
           game_answer = game_random_num1 + game_random_num2;
@@ -53,10 +53,12 @@ $(document).ready(function () {
           game_random_set_num = " - ";
           break;
         case 2:
+          game_random_num2 = Math.floor(Math.random() * 10);
           game_answer = game_random_num1 * game_random_num2;
           game_random_set_num = " x ";
           break;
         case 3:
+          game_random_num2 = Math.floor(Math.random() * 10);
           game_answer = game_random_num1 / game_random_num2;
           game_random_set_num = " : ";
           break;
