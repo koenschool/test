@@ -2,83 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Space Invaders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Loading Cube</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000;
+            background-color: #282c34;
+            margin: 0;
         }
-        #gameArea {
-            width: 400px;
-            height: 600px;
+
+        .cube {
+            width: 50px;
+            height: 50px;
             position: relative;
-            background-color: #111;
-            overflow: hidden;
+            transform-style: preserve-3d;
+            animation: rotate 2s infinite linear;
         }
-        #player {
-            width: 40px;
-            height: 20px;
+
+        .cube div {
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            background-color: #0f0;
-            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
         }
-        .bullet {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            width: 5px;
-            height: 20px;
-            background-color: #f00;
-            transform: translateX(-50%);
+
+        .front  { transform: translateZ(25px); background: red; }
+        .back   { transform: rotateY(180deg) translateZ(25px); background: green; }
+        .right  { transform: rotateY(90deg) translateZ(25px); background: blue; }
+        .left   { transform: rotateY(-90deg) translateZ(25px); background: yellow; }
+        .top    { transform: rotateX(90deg) translateZ(25px); background: cyan; }
+        .bottom { transform: rotateX(-90deg) translateZ(25px); background: magenta; }
+
+        @keyframes rotate {
+            from { transform: rotateX(0deg) rotateY(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
         }
     </style>
 </head>
 <body>
-    <div id="gameArea">
-        <div id="player"></div>
+    <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="right"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
     </div>
-    <script>
-        const gameArea = document.getElementById('gameArea');
-        const player = document.getElementById('player');
-        let playerPosition = gameArea.offsetWidth / 2;
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                playerPosition -= 10;
-                if (playerPosition < 0) {
-                    playerPosition = 0;
-                }
-            } else if (e.key === 'ArrowRight') {
-                playerPosition += 10;
-                if (playerPosition > gameArea.offsetWidth - player.offsetWidth) {
-                    playerPosition = gameArea.offsetWidth - player.offsetWidth;
-                }
-            } else if (e.key === ' ') {
-                shoot();
-            }
-            player.style.left = playerPosition + 'px';
-        });
-
-        function shoot() {
-            const bullet = document.createElement('div');
-            bullet.classList.add('bullet');
-            bullet.style.left = playerPosition + player.offsetWidth / 2 + 'px';
-            gameArea.appendChild(bullet);
-            let bulletInterval = setInterval(() => {
-                let bulletBottom = parseInt(window.getComputedStyle(bullet).getPropertyValue('bottom'));
-                if (bulletBottom >= gameArea.offsetHeight) {
-                    clearInterval(bulletInterval);
-                    bullet.remove();
-                } else {
-                    bullet.style.bottom = bulletBottom + 10 + 'px';
-                }
-            }, 50);
-        }
-    </script>
 </body>
 </html>

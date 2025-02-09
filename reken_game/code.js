@@ -42,7 +42,7 @@ $(document).ready(function () {
     if (can_game_start == 1) {
       game_random_num1 = Math.floor(Math.random() * 100);
       game_random_num2 = Math.floor(Math.random() * 100);
-      game_random_add_num = Math.floor(Math.random() * 4);
+      game_random_add_num = Math.floor(Math.random() * 3);
       switch (game_random_add_num) {
         case 0:
           game_answer = game_random_num1 + game_random_num2;
@@ -78,6 +78,7 @@ $(document).ready(function () {
         " = " +
         game_answer;
         if(cheat_mode == 1){
+          $game_input.val(game_answer);
           console.log(game_full_math);
         }
     }
@@ -111,7 +112,11 @@ $(document).ready(function () {
         }
         game_def();
         generate_numbers();
-        $game_input.val("");
+        if(cheat_mode == 1) {
+          $game_input.val(game_answer);
+        } else {
+          $game_input.val();
+        }
       }
   }
   //   function to end the game

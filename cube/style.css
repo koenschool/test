@@ -1,0 +1,51 @@
+:root {
+    --xsize1: 100px;
+    --xsize2: 50px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: gray;
+}
+
+.cuber {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 2s infinite linear;
+    width: var(--xsize1);
+    height: var(--xsize1);
+}
+
+.cube {
+    position: absolute;
+    width: var(--xsize1);
+    height: var(--xsize1);
+}
+
+.front  { transform: translateZ(var(--xsize2)); background-image: url("rens_profiel_foto.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+.back   { transform: rotateY(180deg) translateZ( var(--xsize2) ); background-image: url("rens_profiel_foto.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+.right  { transform: rotateY(90deg) translateZ( var(--xsize2) ); background-image: url("rens_profiel_foto.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+.left   { transform: rotateY(-90deg) translateZ( var(--xsize2) ); background-image: url("rens_profiel_foto.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+.top    { transform: rotateX(90deg) translateZ( var(--xsize2) ); background-image: url("poes_marvel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; }
+.bottom { transform: rotateX(-90deg) translateZ( var(--xsize2) ); background-image: url("rens_profiel_foto.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+
+@keyframes rotate {
+    from { transform: rotateX(-40deg) rotateY(0deg); }
+    to { transform: rotateX(-40deg) rotateY(360deg); }
+}
