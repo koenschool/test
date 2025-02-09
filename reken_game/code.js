@@ -29,6 +29,7 @@ $(document).ready(function () {
       $game_time_min.html(time_min);
       $game_time_sec.html(time_sec);
       $game_time = parseInt($game_time);
+      $game_input.focus();
       can_game_start = 1;
       game_timer_loop = setInterval(game_timer_func, 1000);
       max_time_val = parseInt(time_sec) + (parseInt(time_min) * 100);
@@ -40,8 +41,8 @@ $(document).ready(function () {
   //   function for generating numbers, the multiplier and calculates the output
   function generate_numbers() {
     if (can_game_start == 1) {
-      game_random_num1 = Math.floor(Math.random() * 100);
-      game_random_num2 = Math.floor(Math.random() * 100);
+      game_random_num1 = (Math.floor(Math.random() * 99) + 1);
+      game_random_num2 = (Math.floor(Math.random() * 99) + 1);
       game_random_add_num = Math.floor(Math.random() * 3);
       switch (game_random_add_num) {
         case 0:
@@ -53,12 +54,12 @@ $(document).ready(function () {
           game_random_set_num = " - ";
           break;
         case 2:
-          game_random_num2 = Math.floor(Math.random() * 10);
+          game_random_num2 = (Math.floor(Math.random() * 10) + 1);
           game_answer = game_random_num1 * game_random_num2;
           game_random_set_num = " x ";
           break;
         case 3:
-          game_random_num2 = Math.floor(Math.random() * 10);
+          game_random_num2 = (Math.floor(Math.random() * 10) + 1);
           game_answer = game_random_num1 / game_random_num2;
           game_random_set_num = " : ";
           break;
@@ -115,7 +116,7 @@ $(document).ready(function () {
         if(cheat_mode == 1) {
           $game_input.val(game_answer);
         } else {
-          $game_input.val();
+          $game_input.val("");
         }
       }
   }
