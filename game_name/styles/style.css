@@ -1,6 +1,7 @@
 * {
     font-family: Kanit;
     transition: 0.1s;
+    overflow: hidden;
 }
 
 body {
