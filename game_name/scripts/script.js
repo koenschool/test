@@ -34,7 +34,6 @@ $(document).ready(() => {
         for (let index = (game_length - 1); index < game_length; index++) {
             game_nums[index] = Math.floor(Math.random() * 4);
         }
-        console.log(game_nums);
         cycle_colors();
     }
 
@@ -45,7 +44,6 @@ $(document).ready(() => {
         setTimeout(() => {
             $(this).css('transform', 'scale(1)');
         }, 100);
-        console.log($(this).attr('data-color'));        
         if ($(this).attr('data-color') == input_colors[game_nums[current_num]].attr('data-color')) {
             current_num++;
         }
@@ -67,8 +65,6 @@ $(document).ready(() => {
     function cycle_colors() {
         $game_input.css('pointer-events', 'none');
         $game_input.css('opacity', '0.5');
-        console.log(game_length);
-        
         cycle_num = 0;
         cycle_timer = setInterval(function () {
             input_colors[game_nums[cycle_num]].css('opacity', '1');
