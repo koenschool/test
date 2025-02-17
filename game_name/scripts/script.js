@@ -8,6 +8,7 @@ $(document).ready(() => {
     $game_field = $(".game-field"),
     $game_lost = $(".game-lost"),
     $score = $(".score"),
+    cycle_times = 750;
     game_length = 1,
     current_num = 0,
     game_start = false,
@@ -84,9 +85,9 @@ $(document).ready(() => {
                     setTimeout(function() {
                         $game_input.css('pointer-events', 'auto');
                         $game_input.css('opacity', '1');   
-                    }, 500);
+                    }, (cycle_times / 2));
                 }
-            }, 500);
-        }, 1000);
+            }, (cycle_times / 2));
+        }, cycle_times);
     }
 });

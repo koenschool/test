@@ -1,5 +1,5 @@
 * {
-    font-family: Kanit;
+    font-family: Kanit, monospace;
     transition: 0.1s;
     overflow: hidden;
 }
@@ -94,7 +94,7 @@ body {
 .wave {
     position: absolute;
     border-radius: 50%;
-    background-color: rgb(59 59 59);
+    background-color: #3b3b3b;
     transform: scale(0);
     pointer-events: none;
 }
