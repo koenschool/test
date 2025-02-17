@@ -7,6 +7,7 @@ $(document).ready(() => {
     $game_yellow = $(".game-yellow"),
     $game_field = $(".game-field"),
     $game_lost = $(".game-lost"),
+    $score = $(".score"),
     game_length = 1,
     current_num = 0,
     game_start = false,
@@ -22,8 +23,10 @@ $(document).ready(() => {
         }, 100);
     });
 
-
     function begin_game() {
+        $game_lost.css({
+            'opacity': '0',
+        });
         game_length = 1;
         current_num = 0;
         generate_nums();
@@ -49,15 +52,20 @@ $(document).ready(() => {
         }
         else {
             $game_cover.css('display', 'flex');
-            $game_cover.css('opacity', '1');
             $game_btn.html('Begin opnieuw');
             $game_lost.css({
                 'display': 'initial',
                 'opacity': '1',
             });
+            $game_lost.html(`Verloren :(<br>Je score was: ${game_length}`);
+            setTimeout(() => {
+                $game_cover.css('opacity', '1');
+
+            }, 100);
         }
         if (current_num == game_length) {
             game_length++;
+            $score.html(game_length);
             generate_nums();
         }
     });
