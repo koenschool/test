@@ -61,7 +61,6 @@ $(document).ready(() => {
             $game_lost.html(`Verloren :(<br>Je score was: ${game_length}`);
             setTimeout(() => {
                 $game_cover.css('opacity', '1');
-
             }, 100);
         }
         if (current_num == game_length) {
